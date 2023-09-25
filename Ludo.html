@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Ludo.css">
+</head>
+
+<body>
+    <h1>JS Ludo</h1>
+    <div class="container">
+        <div class="player">
+            <h2>Player 1</h2>
+            <img src="1.jpeg"alt="" id="play1">
+        </div>
+        <div class="player">
+            <h2>Player 2</h2>
+            <img src="1.jpeg"alt="" id="play2">
+        </div>
+
+    </div>
+    <button class="btn" onclick="dice()">Click here</button>
+
+    <script>
+        function dice() {
+            const play1 = Math.floor((Math.random() * 6) + 1);
+            var source=`${play1}.jpeg`
+            document.getElementById("play1").setAttribute('src',source)
+
+            const play2 = Math.floor((Math.random() * 6) + 1);
+            var source=`${play2}.jpeg`
+            document.getElementById("play2").setAttribute('src',source)
+
+            if(play1>play2){
+                document.querySelector('h1').innerHTML="Player 1 won:"
+            }else if(play2>play1){
+                document.querySelector('h1').innerHTML="Player 2 won:"   
+            }else{
+                document.querySelector('h1').innerHTML="Drow match:"   
+            }
+        }
+    </script>
+</body>
+
+</html>
